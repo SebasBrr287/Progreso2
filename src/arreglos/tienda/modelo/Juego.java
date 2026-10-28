@@ -44,6 +44,8 @@ public class Juego {
     }
 
     public void setNombre(String nombre) {
+
+        if (nombre != null && !nombre.trim().isBlank())
         this.nombre = nombre;
     }
 
