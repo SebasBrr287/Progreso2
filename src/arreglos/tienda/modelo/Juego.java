@@ -50,14 +50,21 @@ public class Juego {
     }
 
     public void setCategoria(String categoria) {
+        if (categoria != null && !categoria.trim().isBlank())
         this.categoria = categoria;
     }
 
     public void setMemoria(int memoria) {
-        this.memoria = memoria;
+        if (memoria >0){
+            this.memoria = memoria;
+        }
+
     }
 
     public void setPrecio(double precio) {
-        this.precio = precio;
+        if (precio > 0) {
+            this.precio = precio;
+        }
     }
+
 }
