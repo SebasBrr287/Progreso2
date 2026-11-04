@@ -12,6 +12,11 @@ public class AppStore {
          indice = -1;
      }
 
+     public void cargarDatos(){
+         juegos[++indice] = new Juego("Fifa2026","Deportes",15,45,50);
+         juegos[++indice] = new Juego("Roblox","Acción",23,59,80);
+     }
+
     public Juego[] getJuegos(){
          return juegos;
     }
