@@ -67,4 +67,21 @@ public class Juego {
         }
     }
 
+    /*
+     public boolean comparar(String nombre){
+     if(this.nombre == nombre) compara la direccion de memoria
+     if(this.nombre.equalsIgnoreCase(nombre) compara el contenido
+      */
+
+    @Override
+    public String toString() {
+        return "Juego{" +
+                "nombre='" + nombre + '\'' +
+                ", categoria='" + categoria + '\'' +
+                ", memoria=" + memoria +
+                ", precio=" + precio +
+                ", licenciasDisponibles=" + licenciasDisponibles +
+                ", licenciasVendidas=" + licenciasVendidas +
+                '}';
+    }
 }
