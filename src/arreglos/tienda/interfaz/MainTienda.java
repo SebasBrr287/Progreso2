@@ -8,40 +8,37 @@ public class MainTienda {
     static void main(){
 Scanner scanner = new Scanner(System.in);
         AppStore tienda = new AppStore();
-        int opcion = 0;
+        int op = 0;
 
         do {
-            System.out.println("\n=======================================");
-            System.out.println("      SISTEMA DE GESTION - APPSTORE    ");
-            System.out.println("=======================================");
+            System.out.println("Gestión de tienda");
             System.out.println("1. Agregar juegos");
             System.out.println("2. Visualizar");
-            System.out.println("3. Comprar (Aumentar licencias)");
-            System.out.println("4. Vender (Disminuir licencias)");
-            System.out.println("5. Consultar (Buscar juego)");
+            System.out.println("3. Comprar");
+            System.out.println("4. Vender");
+            System.out.println("5. Consultar");
             System.out.println("6. Salir");
-            System.out.print("Seleccione una opcion (1-6): ");
-            
-            // Validación básica de entrada numérica
+            System.out.print("Seleccione una opcion: ");
+
             if (scanner.hasNextInt()) {
-                opcion = scanner.nextInt();
+                op = scanner.nextInt();
                 scanner.nextLine(); // Limpiar el buffer de entrada
             } else {
-                System.out.println("\n[!] Error: Ingrese un numero valido.");
+                System.out.println("\n Error: Ingrese un numero valido.");
                 scanner.nextLine(); // Limpiar entrada incorrecta
                 continue;
             }
 
-            switch (opcion) {
+            switch (op) {
                 case 1:
-                    System.out.println("\n--- REGISTRAR NUEVO JUEGO ---");
+                    System.out.println("\n Registar nuevo Juego");
                     System.out.print("Nombre: ");
                     String nombre = scanner.nextLine();
                     System.out.print("Categoria: ");
                     String categoria = scanner.nextLine();
-                    System.out.print("Memoria (GB): ");
+                    System.out.print("Memoria: ");
                     int memoria = scanner.nextInt();
-                    System.out.print("Precio ($): ");
+                    System.out.print("Precio: ");
                     double precio = scanner.nextDouble();
                     System.out.print("Licencias iniciales disponibles: ");
                     int licencias = scanner.nextInt();
@@ -54,38 +51,35 @@ Scanner scanner = new Scanner(System.in);
                     // Nota: En tu AppStore, el metodo agregarJuego usa indice < Max - 1.
                     try {
                         tienda.agregarJuego(nuevoJuego);
-                        System.out.println("\n[Éxito] ¡Juego agregado correctamente!");
+                        System.out.println("\nJuego agregado correctamente!");
                     } catch (Exception e) {
-                        System.out.println("\n[!] No se pudo agregar el juego (capacidad maxima alcanzada o datos invalidos).");
+                        System.out.println("\nNo se pudo agregar el juego capacidad maxima alcanzada o datos invalidos.");
                     }
                     break;
                     
                 case 2:
-                    System.out.println("\n--- LISTA DE JUEGOS DISPONIBLES ---");
-                    // Nota: Tu método sacarJuegos recorre hasta `i < indice`. 
-                    // Ojo: si `indice` apunta al último elemento añadido, para recorrerlo por completo 
-                    // debería ser `i <= indice`. Aquí te mostramos lo que retorna tu método actual:
+                    System.out.println("\nLISTA DE JUEGOS DISPONIBLES ");
                     System.out.println(tienda.sacarJuegos());
                     break;
                     
                 case 3:
-                    System.out.println("\n--- COMPRAR LICENCIAS (STOCK) ---");
+                    System.out.println("\nCOMPRAR LICENCIAS ");
                     System.out.print("Ingrese el nombre del juego: ");
                     String juegoCompra = scanner.nextLine();
-                    System.out.print("Cantidad de licencias a comprar/agregar: ");
+                    System.out.print("Cantidad de licencias a agregar: ");
                     int cantCompra = scanner.nextInt();
                     scanner.nextLine();
 
                     boolean comprado = tienda.comprar(juegoCompra, cantCompra);
                     if (comprado) {
-                        System.out.println("\n[Éxito] Stock actualizado correctamente.");
+                        System.out.println("\n Stock actualizado correctamente.");
                     } else {
-                        System.out.println("\n[!] No se encontro el juego o la cantidad es invalida.");
+                        System.out.println("\n No se encontro el juego o la cantidad es invalida.");
                     }
                     break;
                     
                 case 4:
-                    System.out.println("\n--- VENDER LICENCIAS ---");
+                    System.out.println("\n VENDER LICENCIAS");
                     System.out.print("Ingrese el nombre del juego a vender: ");
                     String juegoVenta = scanner.nextLine();
                     System.out.print("Cantidad de licencias a vender: ");
@@ -94,35 +88,35 @@ Scanner scanner = new Scanner(System.in);
 
                     double totalVenta = tienda.vender(juegoVenta, cantVenta);
                     if (totalVenta > 0) {
-                        System.out.println("\n[Éxito] Venta realizada con exito.");
+                        System.out.println("\n Venta realizada con exito.");
                         System.out.println("Total a pagar por el cliente: $" + totalVenta);
                     } else {
-                        System.out.println("\n[!] Venta fallida (Verifique el nombre o las licencias disponibles).");
+                        System.out.println("\n Venta fallida Verifique el nombre o las licencias disponibles.");
                     }
                     break;
                     
                 case 5:
-                    System.out.println("\n--- CONSULTAR JUEGO ---");
+                    System.out.println("\n CONSULTAR JUEGO");
                     System.out.print("Ingrese el nombre del juego que desea buscar: ");
                     String juegoBusqueda = scanner.nextLine();
                     
                     Juego encontrado = tienda.buscarJuego(juegoBusqueda);
                     if (encontrado != null) {
-                        System.out.println("\n[Encontrado]: " + encontrado);
+                        System.out.println("\nEncontrado : " + encontrado);
                     } else {
-                        System.out.println("\n[!] El juego no se encuentra registrado.");
+                        System.out.println("\n El juego no se encuentra registrado.");
                     }
                     break;
                     
                 case 6:
-                    System.out.println("\nSaliendo del sistema de la tienda... ¡Hasta luego!");
+                    System.out.println("\n Saliendo del sistema de la tienda... ¡Hasta luego!");
                     break;
                     
                 default:
-                    System.out.println("\n[!] Opcion invalida. Por favor, ingrese un numero del 1 al 6.");
+                    System.out.println("\n Opcion invalida. Por favor, ingrese un numero del 1 al 6.");
             }
 
-        } while (opcion != 6);
+        } while (op != 6);
         
         scanner.close();
     }
