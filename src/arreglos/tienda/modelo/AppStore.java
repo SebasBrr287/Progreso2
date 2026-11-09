@@ -14,8 +14,7 @@ public class AppStore {
      }
 
      private void cargarDatos(){
-         juegos[++indice] = new Juego("Fifa2026","Deportes",15,45,50);
-         juegos[++indice] = new Juego("Roblox","Acción",23,59,80);
+        agregarJuego(new Juego("Fifa 27","futbol",3,20,50));
      }
 
     public Juego[] getJuegos(){
@@ -33,23 +32,31 @@ public class AppStore {
      }
 
     public Juego buscarJuego(String nombre) {
-        for (int i = 0; i < indice; i++){
-            if(juegos[i].getNombre().equalsIgnoreCase(nombre)){
-                return juegos[i];
-            }
+        if (nombre != null && !nombre.trim().isBlank()){
+         for (int i = 0; i < indice; i++) {
+             if (juegos[i].getNombre().equalsIgnoreCase(nombre)) {
+                 return juegos[i];
+             }
+         }
         }
         return null;
     }
 
-    public boolean comprar(String nombre,int cantidad){
-         Juego j1 = buscarJuego(nombre);
-         if (j1 != null){
-             return j1.comprar(cantidad);
-         }
-         return false;
+    public boolean comprar(String nombre,int cantidad) {
+        if (nombre != null && !nombre.trim().isBlank() && cantidad > 0) {
+            Juego j1 = buscarJuego(nombre);
+            if (j1 != null) {
+                return j1.comprar(cantidad);
+            }
+            return false;
+        } else
+            return false;
     }
 
     public double vender(String nombre,int cantidad){
+
+         // no valida porque el buscar ya valida el nombre y el vender del juego la cantidad
+
         Juego j1 = buscarJuego(nombre);
         if (j1 != null){
              if (j1.vender(cantidad)){
@@ -67,4 +74,29 @@ public class AppStore {
         }
         return !juegoS.trim().isBlank()?juegoS:"No hy juegos a mostar";
     }
+
+    public String juegosMasVendido() {
+         String nombre ="";
+         int masVendido;
+         if (indice >= 0){
+             nombre = juegos[0].getNombre();
+             masVendido = juegos[0].getLicenciasVendidas();
+
+             //
+             for (Juego j: juegos){
+                 if (j != null){
+                     if (j.getLicenciasVendidas() > masVendido){
+                         nombre = j.getNombre();
+                         masVendido = j.getLicenciasVendidas();
+                     }
+                 }else{
+
+                 return nombre;
+                 }
+
+             }
+         }
+        return nombre;
+    }
+
 }
