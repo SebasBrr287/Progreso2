@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94fe32e8-cff4-40a6-a08c-dcd9e2a2c961" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/arreglos/tienda/modelo/AppStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arreglos/tienda/modelo/AppStore.java" afterDir="false" />
+    <list default="true" id="94fe32e8-cff4-40a6-a08c-dcd9e2a2c961" name="Changes" comment="correcciones">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arreglos/tienda/interfaz/MainTienda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arreglos/tienda/interfaz/MainTienda.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +13,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "SebasBrr287"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/SebasBrr287/Progreso2.git",
+    "accountId": "d1a29ab6-ca46-4a25-8e8d-e68f34e159e1"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 2,
   "fromUser": false
@@ -52,5 +65,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="correcciones" />
+    <option name="LAST_COMMIT_MESSAGE" value="correcciones" />
   </component>
 </project>
