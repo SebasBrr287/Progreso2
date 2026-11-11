@@ -4,6 +4,7 @@ import arreglos.tienda.modelo.Juego;
 import arreglos.tienda.modelo.*;
 import arreglos.tienda.utilitario.Validacion;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class MainTienda {
@@ -77,7 +78,11 @@ public class MainTienda {
 
         System.out.print("Ingrese el stock inicial: ");
         int licenciasDisponibles = Integer.parseInt(sc.nextLine());
-        System.out.println("¡Juego registrado con éxito!");
+        if (tienda.agregarJuego(new Juego(nombre,categoria,tamanio,precio,licenciasDisponibles))) {
+            JOptionPane.showMessageDialog(null,"¡Juego registrado con éxito!");
+        }else{
+            JOptionPane.showMessageDialog(null,"El juego no pudo ser agregado");
+        }
     }
 
    /*
