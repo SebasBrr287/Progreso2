@@ -1,7 +1,9 @@
 package arreglos.tienda.interfaz;
 
 import arreglos.tienda.modelo.Juego;
-import arreglos.tienda.modelo.AppStore;
+import arreglos.tienda.modelo.*;
+import arreglos.tienda.utilitario.Validacion;
+
 import java.util.Scanner;
 
 public class MainTienda {
@@ -12,16 +14,16 @@ public class MainTienda {
         int opc;
         do {
             menu();
-            opc = leerEnteroEnRango("Ingrese una opcion: ", 1, 7);
+            opc = Validacion.leerEnteroEnRango("Ingrese una opcion", 1, 7);
             switch (opc) {
                 case 1: {
                     System.out.println("\n--- Ingresar Juego ---");
-                    // Ejemplo de validación para precio o stock positivos
-                    // double precio = leerDoublePositivo("Ingrese el precio del juego: ");
+                    ingresarJuegos();
                 }
                 break;
                 case 2: {
                     System.out.println("\n--- Mostrar Juegos ---");
+                    System.out.println(tienda.sacarJuegos());
                 }
                 break;
                 case 3: {
@@ -60,68 +62,40 @@ public class MainTienda {
         System.out.println("7. Salir");
     }
 
-    // --- MÉTODOS DE VALIDACIÓN AUXILIARES ---
+    // Método de ejemplo para ingresar juegos utilizando las validaciones correctamente
+    public static void ingresarJuegos() {
+        System.out.println("*******Ingreso de datos********");
 
-    /** Lee un número entero asegurando que esté dentro de un rango min y max (ej: menú 1 al 7) */
-    public static int leerEnteroEnRango(String mensaje, int min, int max) {
-        int valor = 0;
-        boolean valido = false;
-        do {
-            System.out.print(mensaje);
-            String entrada = sc.nextLine();
-            try {
-                valor = Integer.parseInt(entrada);
-                if (valor >= min && valor <= max) {
-                    valido = true;
-                } else {
-                    System.out.println("Error: El número debe estar entre " + min + " y " + max + ".");
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Error: Debe ingresar un número entero válido.");
-            }
-        } while (!valido);
-        return valor;
+        // Usamos leerString para texto
+        String nombre = Validacion.leerString("Ingrese el nombre");
+        String categoria = Validacion.leerString("Ingrese la categoria");
+        System.out.print("Ingrese el tamaño: ");
+        int tamanio = Integer.parseInt(sc.nextLine());
+
+        System.out.print("Ingrese el precio: ");
+        double precio = Double.parseDouble(sc.nextLine());
+
+        System.out.print("Ingrese el stock inicial: ");
+        int licenciasDisponibles = Integer.parseInt(sc.nextLine());
+        System.out.println("¡Juego registrado con éxito!");
     }
 
-    /** Valida que un número entero sea estrictamente positivo (> 0) o mayor o igual a cero (>= 0) */
-    public static int leerEnteroPositivo(String mensaje, boolean permitirCero) {
-        int valor = 0;
-        boolean valido = false;
-        do {
-            System.out.print(mensaje);
-            try {
-                valor = Integer.parseInt(sc.nextLine());
-                if (permitirCero ? valor >= 0 : valor > 0) {
-                    valido = true;
-                } else {
-                    System.out.println("Error: El número debe ser " + (permitirCero ? "mayor o igual a 0." : "positivo (> 0)."));
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Error: Debe ingresar un valor numérico válido.");
-            }
-        } while (!valido);
-        return valor;
-    }
+   /*
+    public static void mostrarJuegos(){
+        /*
+        Codigo si mi clase Appstore no tiene el metodo sacarJuegos para mostrar todos los juegos
 
-    /** Valida que un número decimal (ej. precios) sea positivo */
-    public static double leerDoublePositivo(String mensaje) {
-        double valor = 0.0;
-        boolean valido = false;
-        do {
-            System.out.print(mensaje);
-            try {
-                valor = Double.parseDouble(sc.nextLine());
-                if (valor > 0) {
-                    valido = true;
-                } else {
-                    System.out.println("Error: El valor debe ser mayor a 0.");
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Error: Debe ingresar un número decimal válido.");
-            }
-        } while (!valido);
-        return valor;
+        Juego juegos[] = tienda.getJuegos();
+        if (tienda.getIndice()!= -1){
+        for (int i = 0; i <= tienda.getIndice();i++) {
+            System.out.println(juegos[i]);
+        }
+        }else{
+            System.out.println("No hay juegos para mostar");
+        }
     }
+         */
+
 }
 
 

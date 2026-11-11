@@ -13,7 +13,7 @@ public class AppStore {
          cargarDatos();
      }
 
-     private void cargarDatos(){
+     public void cargarDatos(){
         agregarJuego(new Juego("Fifa 27","futbol",3,20,50));
      }
 
@@ -21,14 +21,19 @@ public class AppStore {
          return juegos;
     }
 
-     // Toda clase que tenga un arreglo o colección debe tener 2 funciones: 1.Agregar datos y 2.Buscar datos
+    public int getIndice() {
+        return indice;
+    }
 
-     public void agregarJuego(Juego j){
+    // Toda clase que tenga un arreglo o colección debe tener 2 funciones: 1.Agregar datos y 2.Buscar datos
+
+     public boolean agregarJuego(Juego j){
          if (j != null && indice < Max -1){
              juegos[++indice] = j;
+             return true;
 
          }
-
+        return false;
      }
 
     public Juego buscarJuego(String nombre) {
@@ -68,7 +73,7 @@ public class AppStore {
 
     public String sacarJuegos(){
          String juegoS = "";
-        for (int i = 0; i < indice; i++) {
+        for (int i = 0; i <= indice; i++) {
             juegoS += juegos[i];
             juegoS += "\n";
         }
@@ -98,5 +103,6 @@ public class AppStore {
          }
         return nombre;
     }
+
 
 }
