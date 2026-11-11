@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94fe32e8-cff4-40a6-a08c-dcd9e2a2c961" name="Changes" comment="correcciones">
-      <change afterPath="$PROJECT_DIR$/src/arreglos/tienda/utilitario/Validacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arreglos/tienda/interfaz/MainTienda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arreglos/tienda/interfaz/MainTienda.java" afterDir="false" />
+    <list default="true" id="94fe32e8-cff4-40a6-a08c-dcd9e2a2c961" name="Changes" comment="clase del 11">
       <change beforePath="$PROJECT_DIR$/src/arreglos/tienda/modelo/AppStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arreglos/tienda/modelo/AppStore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,12 +25,12 @@
     &quot;assignee&quot;: &quot;SebasBrr287&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/SebasBrr287/Progreso2.git&quot;,
-    &quot;accountId&quot;: &quot;d1a29ab6-ca46-4a25-8e8d-e68f34e159e1&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/SebasBrr287/Progreso2.git",
+    "accountId": "ad7a0d23-efe7-461d-83d4-676873cd9c99"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2,
   &quot;fromUser&quot;: false
@@ -78,6 +75,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="correcciones" />
-    <option name="LAST_COMMIT_MESSAGE" value="correcciones" />
+    <MESSAGE value="clase del 11" />
+    <option name="LAST_COMMIT_MESSAGE" value="clase del 11" />
   </component>
 </project>

@@ -15,6 +15,7 @@ public class AppStore {
 
      public void cargarDatos(){
         agregarJuego(new Juego("Fifa 27","futbol",3,20,50));
+         agregarJuego(new Juego("Fortnite","pvp",4,10,5));
      }
 
     public Juego[] getJuegos(){
